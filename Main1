@@ -1,0 +1,47 @@
+package Biblioteca;
+
+public class App {
+
+	public static void main(String[] args) {
+		// Se crea un objeto de la clase Biblioteca
+		Biblioteca miBiblioteca = new Biblioteca();
+
+		// Crear dos objetos de la clase Libro
+		Libro libro1 = new Libro("Cien años de soledad", "Gabriel Garcia Marquez", "978-0307474728");
+		Libro libro2 = new Libro("El principito", "Antoine de Saint-Exupery", "978-0156012195");
+
+		// Agregar los libros a la biblioteca
+		miBiblioteca.agregarLibro(libro1);
+		miBiblioteca.agregarLibro(libro2);
+
+		System.out.println("=== Libros disponibles ===");
+		miBiblioteca.mostrarLibros();
+
+		// Crear dos objetos de la clase Estudiante
+		Estudiante estudiante1 = new Estudiante("Sofia Diaz");
+		Estudiante estudiante2 = new Estudiante("Angelica Garzon");
+
+		// Buscar libro y realizar prestamo a Sofia
+		Libro libroEncontrado1 = miBiblioteca.buscarLibro("978-0307474728");
+
+		if (libroEncontrado1 == null)
+			System.out.println("Error: Libro no encontrado");
+		else {
+			Prestamo prestamo1 = new Prestamo(1, estudiante1, libroEncontrado1);
+			miBiblioteca.realizarPrestamo(prestamo1);
+		}
+
+		// Buscar libro y realizar prestamo a Angelica
+		Libro libroEncontrado2 = miBiblioteca.buscarLibro("978-0156012195");
+
+		if (libroEncontrado2 == null)
+			System.out.println("Error: Libro no encontrado");
+		else {
+			Prestamo prestamo2 = new Prestamo(2, estudiante2, libroEncontrado2);
+			miBiblioteca.realizarPrestamo(prestamo2);
+		}
+
+		System.out.println("\n=== Libros disponibles ===");
+		miBiblioteca.mostrarLibros();
+	}
+}
