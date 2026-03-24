@@ -1,0 +1,22 @@
+public class Main {
+    public static void main(String[] args) {
+        Biblioteca biblioteca = new Biblioteca();
+ 
+        Libro libro1 = new Libro("Clean Code", "sofia diaz", "978-0132350884");
+        Libro libro2 = new Libro("Effective Java", "angelica garzon", "978-0134685991");
+        biblioteca.agregarLibro(libro1);
+        biblioteca.agregarLibro(libro2);
+ 
+        Estudiante estudiante1 = new Estudiante("john hurtado");
+ 
+        Prestamo prestamo1 = new Prestamo(1, estudiante1, libro1);
+        biblioteca.realizarPrestamo(prestamo1);
+ 
+        System.out.println("=== Libros ===");
+        biblioteca.mostrarLibros();
+ 
+        System.out.println("\n=== Prestamos ===");
+        biblioteca.mostrarPrestamos();
+    }
+}
+ 
