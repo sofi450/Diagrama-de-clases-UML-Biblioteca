@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.List;
+ 
+public class Biblioteca {
+    private List<Libro> listaLibros;
+    private List<Prestamo> listaPrestamos;
+ 
+    public Biblioteca() {
+        this.listaLibros = new ArrayList<>();
+        this.listaPrestamos = new ArrayList<>();
+    }
+ 
+    public void agregarLibro(Libro libro) {
+        listaLibros.add(libro);
+    }
+ 
+    public void realizarPrestamo(Prestamo prestamo) {
+        listaPrestamos.add(prestamo);
+    }
+ 
+    public Libro buscarLibro(String isbn) {
+        for (Libro libro : listaLibros) {
+            if (libro.toString().contains(isbn)) {
+                return libro;
+            }
+        }
+        return null;
+    }
+ 
+    public void mostrarLibros() {
+        for (Libro libro : listaLibros) {
+            System.out.println(libro);
+        }
+    }
+ 
+    public void mostrarPrestamos() {
+        for (Prestamo prestamo : listaPrestamos) {
+            System.out.println(prestamo);
+        }
+    }
+}
