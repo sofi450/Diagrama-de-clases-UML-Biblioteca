@@ -1,21 +1,32 @@
+package Biblioteca;
 import java.time.LocalDate;
- 
+
+
+/*La clase Préstamo representa el registro de un libro prestado a un estudiante.
+Permite almacenar información sobre qué libro se prestó, a qué estudiante y en qué fecha.*/
+
 public class Prestamo {
-    private int numero;
-    private LocalDate fechaPrestamo;
-    private Libro libro;
-    private Estudiante estudiante;
- 
-    public Prestamo(int numero, Estudiante estudiante, Libro libro) {
-        this.numero = numero;
-        this.estudiante = estudiante;
-        this.libro = libro;
-        this.fechaPrestamo = LocalDate.now();
-    }
- 
-    @Override
-    public String toString() {
-        return "Prestamo{numero=" + numero + ", fecha=" + fechaPrestamo + ", estudiante=" + estudiante + ", libro=" + libro + "}";
-    }
+	private int numero;
+	private LocalDate fechaPrestamo;
+	private Libro libro;
+	private Estudiante estudiante;
+	
+	/*Constructor que recibe parámetros entero, una
+	referencia a un objeto de la clases Estudiante y una
+	referencia a un objeto de la clases Libro que
+	representan los datos para crea el préstamo. El dato de
+	la fecha es asignado por el constructor creando un
+	objeto de la clase LocalDate.*/
+	
+	public Prestamo(int numero, Estudiante estudiante, Libro libro) {
+		this.numero = numero;
+		this.estudiante = estudiante;
+		this.libro = libro;
+		this.fechaPrestamo = LocalDate.now();
+	}
+	
+	public String toString() {
+		return "Numero: " + this.numero + "Fecha: " + this.fechaPrestamo + "Libro: " + this.libro + "Estudiante: " + this.estudiante;
+	}
 }
  
