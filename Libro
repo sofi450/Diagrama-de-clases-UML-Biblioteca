@@ -1,19 +1,34 @@
+package Biblioteca;
+
+//La clase Libro representa cada uno de los libros disponibles en la biblioteca
+
 public class Libro {
-    private String titulo;
-    private String autor;
-    private String isbn;
-    private boolean estado;
- 
-    public Libro(String titulo, String autor, String isbn) {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.isbn = isbn;
-        this.estado = true;
-    }
- 
-    @Override
-    public String toString() {
-        return "Libro{titulo='" + titulo + "', autor='" + autor + "', isbn='" + isbn + "', estado=" + estado + "}";
-    }
+	
+	private String titulo;
+	private String autor;
+	private String isbn;
+	private boolean estado;
+	
+	/*Constructor que recibe un parámetro tres valores de tipo String,
+para inicializa los datos del libro, al atributo estado se asigna el
+valor true por que un objeto libro cuando se crea esta
+disponible.*/
+	
+	public Libro(String titulo, String autor, String isbn) {
+		this.titulo = titulo;
+		this.autor = autor;
+		this.isbn = isbn;
+		this.estado = true;
+		
+	}
+	
+	//devuelve la informacion del libro en formato texto
+	public String toString() {
+		return "Titulo: " + this.titulo + "Autor: " + this.autor + "ISBN: " + this.isbn + "Estado: " + this.estado;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
 }
  
