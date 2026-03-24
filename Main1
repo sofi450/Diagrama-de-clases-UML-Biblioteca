@@ -7,14 +7,14 @@ public class App {
 		Biblioteca miBiblioteca = new Biblioteca();
 
 		// Crear dos objetos de la clase Libro
-		Libro libro1 = new Libro("Cien años de soledad", "Gabriel Garcia Marquez", "978-0307474728");
-		Libro libro2 = new Libro("El principito", "Antoine de Saint-Exupery", "978-0156012195");
+		Libro libro1 = new Libro("Noches blancas", "Fiódor Dostoyevski", "123-4357462771");
+		Libro libro2 = new Libro("La metamorfosis", "Franz Kafka", "123-3214567890");
 
 		// Agregar los libros a la biblioteca
 		miBiblioteca.agregarLibro(libro1);
 		miBiblioteca.agregarLibro(libro2);
 
-		System.out.println("=== Libros disponibles ===");
+		System.out.println("Libros disponibles");
 		miBiblioteca.mostrarLibros();
 
 		// Crear dos objetos de la clase Estudiante
@@ -22,7 +22,7 @@ public class App {
 		Estudiante estudiante2 = new Estudiante("Angelica Garzon");
 
 		// Buscar libro y realizar prestamo a Sofia
-		Libro libroEncontrado1 = miBiblioteca.buscarLibro("978-0307474728");
+		Libro libroEncontrado1 = miBiblioteca.buscarLibro("9123-4357462771");
 
 		if (libroEncontrado1 == null)
 			System.out.println("Error: Libro no encontrado");
@@ -32,7 +32,7 @@ public class App {
 		}
 
 		// Buscar libro y realizar prestamo a Angelica
-		Libro libroEncontrado2 = miBiblioteca.buscarLibro("978-0156012195");
+		Libro libroEncontrado2 = miBiblioteca.buscarLibro("123-3214567890");
 
 		if (libroEncontrado2 == null)
 			System.out.println("Error: Libro no encontrado");
