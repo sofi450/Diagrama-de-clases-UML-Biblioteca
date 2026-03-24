@@ -1,13 +1,30 @@
+package Biblioteca;
+
+/*La clase Estudiante representa a los usuarios de la
+biblioteca que pueden solicitar préstamos de libros.*/
+
 public class Estudiante {
-    private String nombre;
- 
-    public Estudiante(String nombre) {
-        this.nombre = nombre;
-    }
- 
-    @Override
-    public String toString() {
-        return "Estudiante{nombre='" + nombre + "'}";
-    }
+	
+	//Represente le nombre del estudiante
+	
+	private String nombre;
+	
+	//Constructor que recibe un parámetro un valor String para inicializa el nombre del
+	//estudiante.
+	
+	public Estudiante(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	//Devuelve la información del estudiante en formato texto.
+	
+	public String toString() {
+		return "Nombre: " + this.nombre;
+	}
+	
+	
+	
+	
+	
+
 }
- 
