@@ -1,41 +1,63 @@
-import java.util.ArrayList;
+package Biblioteca;
+
 import java.util.List;
- 
+import java.util.ArrayList; 
+
+
+//La clase Biblioteca representa el sistema principal encargado de administrar los libros y los préstamos
+
 public class Biblioteca {
-    private List<Libro> listaLibros;
-    private List<Prestamo> listaPrestamos;
- 
-    public Biblioteca() {
-        this.listaLibros = new ArrayList<>();
-        this.listaPrestamos = new ArrayList<>();
-    }
- 
-    public void agregarLibro(Libro libro) {
-        listaLibros.add(libro);
-    }
- 
-    public void realizarPrestamo(Prestamo prestamo) {
-        listaPrestamos.add(prestamo);
-    }
- 
-    public Libro buscarLibro(String isbn) {
-        for (Libro libro : listaLibros) {
-            if (libro.toString().contains(isbn)) {
-                return libro;
-            }
-        }
-        return null;
-    }
- 
-    public void mostrarLibros() {
-        for (Libro libro : listaLibros) {
-            System.out.println(libro);
-        }
-    }
- 
-    public void mostrarPrestamos() {
-        for (Prestamo prestamo : listaPrestamos) {
-            System.out.println(prestamo);
-        }
-    }
+	private List<Libro> listaLibros;
+	private List<Prestamo> listaPrestamos;
+	
+	
+	/*Constructor de la clase Biblioteca, su funcionalidad es crear una
+	instancia de la clase List<Libro> donde cada elemento una instancia e
+	la clase Libro*/
+	
+	public Biblioteca() {
+		this.listaLibros = new ArrayList();
+		this.listaPrestamos = new ArrayList();
+	}
+		
+	/*Recibe como parámetro un referencia a un objeto de la clase Libro y
+permite asignar una referencia de la clase Libro a un elemento de la
+lista de libros. (adiciona un nuevo objeto de la clase Libro a la lista de
+libros).*/
+	
+	
+	public void agregarLibro(Libro libro) {
+		this.listaLibros.add(libro);
+		
+	}
+	
+	/*Recibe como parámetro un referencia a un objeto de la clase Préstamo
+	y permite asignar una referencia de la clase Préstamo a un elemento de
+	la lista de préstamos. (adiciona un nuevo objeto de la clase Préstamo a
+	la lista de préstamos).*/
+	
+	public void realizarPrestamo(Prestamo prestamo) {
+		this.listaPrestamos.add(prestamo);
+		
+	}
+	
+	/*Recibe como parámetro un String código del Libro a buscar. Busca el
+	Libro en la lista de libros. Si lo encuentra retorna una referencia al
+	objeto del libro encontrada. Si no lo encuentra retorna null.*/
+	
+	public Libro buscarLibro(String isbn) {
+		for (Libro libro : listaLibros) {
+			if(libro.getIsbn() == isbn)
+				return libro;
+		}
+		return null;
+	}
+	
+	//Muestra la lista de libros disponibles.
+	
+	public void mostrarLibros() {
+		for (Libro libro: listaLibros) {
+			System.out.println(libro);
+		}
+	}
 }
